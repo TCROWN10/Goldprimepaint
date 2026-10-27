@@ -106,6 +106,9 @@ export type SiteContent = {
     eyebrow: string;
     title: string;
     body: string;
+    colourLabel: string;
+    colourPlaceholder: string;
+    colourHint: string;
     whatsappMessage: string;
     whatsappButton: string;
     shopButton: string;
@@ -332,9 +335,12 @@ export function defaultSiteContent(): SiteContent {
     custom: {
       eyebrow: "CUSTOM",
       title: "Request a custom colour",
-      body: "Tell us the surface, the finish, and the colour. Goldprime offers consultation and surface preparation, then confirms the tin and the shade on WhatsApp.",
+      body: "Type the colour you want below. We will open WhatsApp to your customer care line with that colour ready to send.",
+      colourLabel: "Colour you want",
+      colourPlaceholder: "e.g. Soft sage green, warm cream, or a colour code",
+      colourHint: "Describe the shade in your own words, or paste a colour code if you have one.",
       whatsappMessage: "Hello Goldprime — I'd like a custom paint colour.",
-      whatsappButton: "Start on WhatsApp",
+      whatsappButton: "Send on WhatsApp",
       shopButton: "Browse finishes",
       images: [
         { src: "/Outdoor-look-1.png", alt: "White and charcoal exterior" },

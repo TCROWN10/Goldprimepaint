@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Header } from "@/components/Header";
 import { AnimateIn } from "@/components/AnimateIn";
-import { buildWhatsAppUrl, isExteriorPhoto } from "@/lib/data";
+import { CustomColourRequest } from "@/components/CustomColourRequest";
+import { isExteriorPhoto } from "@/lib/data";
 import { getSiteContent } from "@/lib/content";
 
 export const metadata = {
@@ -26,22 +26,15 @@ export default async function CustomPage() {
                 <p className="mt-5 max-w-md text-[15px] leading-relaxed text-ink-soft md:text-base">
                   {custom.body}
                 </p>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href={buildWhatsAppUrl(business.whatsappNumber, custom.whatsappMessage)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-4 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(78,203,96,0.35)] transition hover:scale-[1.02] hover:bg-whatsapp-deep"
-                  >
-                    {custom.whatsappButton}
-                  </a>
-                  <Link
-                    href="/shop"
-                    className="inline-flex items-center justify-center rounded-full border border-ink/20 px-7 py-4 text-sm font-semibold text-ink transition hover:border-ink/40"
-                  >
-                    {custom.shopButton}
-                  </Link>
-                </div>
+                <CustomColourRequest
+                  whatsappNumber={business.whatsappNumber}
+                  whatsappMessage={custom.whatsappMessage}
+                  colourLabel={custom.colourLabel}
+                  colourPlaceholder={custom.colourPlaceholder}
+                  colourHint={custom.colourHint}
+                  sendButton={custom.whatsappButton}
+                  shopButton={custom.shopButton}
+                />
               </div>
             </AnimateIn>
 

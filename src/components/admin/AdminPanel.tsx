@@ -5,70 +5,51 @@ import type { PaintColour, Product, Range } from "@/lib/data";
 import type { SiteContent } from "@/lib/content";
 import { ImageUploadField, MultiImageUpload } from "@/components/admin/ImageUploadField";
 
-const NAV_GROUPS = [
+const NAV_SECTIONS = [
   {
-    id: "website",
-    label: "Website",
-    children: [
-      ["business", "Business & contact"],
-      ["home", "Home page"],
-      ["stories", "Testimonials"],
-      ["footer", "Footer"],
+    heading: "Sell paints",
+    items: [
+      { id: "products", label: "Your paints", hint: "Names, prices, photos and tin sizes" },
+      { id: "colours", label: "Colour chart", hint: "Shades customers can pick" },
+      { id: "shop", label: "Shop wording", hint: "Menu text and indoor / outdoor labels" },
     ],
   },
   {
-    id: "pages",
-    label: "Pages",
-    children: [
-      ["shop", "Shop"],
-      ["about", "About"],
-      ["custom", "Custom"],
-      ["contact", "Contact"],
+    heading: "Edit the website",
+    items: [
+      { id: "business", label: "Phone & WhatsApp", hint: "How customers reach you" },
+      { id: "home", label: "Home page", hint: "Headlines, photos and sections" },
+      { id: "stories", label: "Customer reviews", hint: "Testimonials on the home page" },
+      { id: "about", label: "About page", hint: "Your company story" },
+      { id: "custom", label: "Custom colour page", hint: "Made-to-order colours" },
+      { id: "contact", label: "Contact page", hint: "Form and contact text" },
+      { id: "footer", label: "Footer", hint: "Bottom of every page" },
     ],
   },
   {
-    id: "catalogue",
-    label: "Catalogue",
-    children: [
-      ["products", "Products"],
-      ["colours", "Colours"],
-      ["tins", "Tin sizes"],
-    ],
-  },
-  {
-    id: "system",
-    label: "System",
-    children: [
-      ["orders", "Checkout & orders"],
-      ["seo", "Google listing"],
+    heading: "Orders & Google",
+    items: [
+      { id: "orders", label: "Order form", hint: "Checkout fields and WhatsApp order text" },
+      { id: "seo", label: "Google listing", hint: "Title and description in search" },
     ],
   },
 ] as const;
 
-type SectionId = (typeof NAV_GROUPS)[number]["children"][number][0];
-type GroupId = (typeof NAV_GROUPS)[number]["id"];
+type SectionId = (typeof NAV_SECTIONS)[number]["items"][number]["id"];
 
-function groupForSection(section: SectionId): GroupId {
-  const found = NAV_GROUPS.find((group) =>
-    group.children.some(([id]) => id === section)
-  );
-  return found?.id ?? "website";
-}
-
-function labelForSection(section: SectionId) {
-  for (const group of NAV_GROUPS) {
-    const hit = group.children.find(([id]) => id === section);
-    if (hit) return hit[1];
+function navItemFor(section: SectionId) {
+  for (const group of NAV_SECTIONS) {
+    const hit = group.items.find((item) => item.id === section);
+    if (hit) return hit;
   }
-  return "Admin";
+  return NAV_SECTIONS[0].items[0];
 }
 
 export function AdminPanel() {
   const [ready, setReady] = useState(false);
   const [authed, setAuthed] = useState(false);
   const [draft, setDraft] = useState<SiteContent | null>(null);
-  const [section, setSection] = useState<SectionId>("business");
-  const [group, setGroup] = useState<GroupId>("website");
+  const [section, setSection] = useState<SectionId>("products");
   const [menuOpen, setMenuOpen] = useState(false);
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState("");
@@ -179,20 +160,10 @@ export function AdminPanel() {
     setDraft((current) => (current ? { ...current, [key]: value } : current));
   }
 
-  const activeGroup = NAV_GROUPS.find((item) => item.id === group) ?? NAV_GROUPS[0];
-  const sectionLabel = labelForSection(section);
-
-  function openGroup(next: GroupId) {
-    setGroup(next);
-    const first = NAV_GROUPS.find((item) => item.id === next)?.children[0]?.[0];
-    if (first && groupForSection(section) !== next) {
-      setSection(first);
-    }
-  }
+  const activeNav = navItemFor(section);
 
   function openSection(next: SectionId) {
     setSection(next);
-    setGroup(groupForSection(next));
     setMenuOpen(false);
   }
 
@@ -221,28 +192,21 @@ export function AdminPanel() {
           </button>
         </div>
 
-        <nav className="admin-primary__nav">
-          {NAV_GROUPS.map((item) => (
-            <div key={item.id} className="admin-primary__group">
-              <button
-                type="button"
-                onClick={() => openGroup(item.id)}
-                className={`admin-nav-btn admin-primary__link ${group === item.id ? "is-active" : ""}`}
-              >
-                {item.label}
-              </button>
-              <div className={`admin-primary__children ${group === item.id ? "is-open" : ""}`}>
-                {item.children.map(([id, label]) => (
-                  <button
-                    key={id}
-                    type="button"
-                    onClick={() => openSection(id)}
-                    className={`admin-primary__child ${section === id ? "is-active" : ""}`}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
+        <nav className="admin-primary__nav" aria-label="What to edit">
+          {NAV_SECTIONS.map((group) => (
+            <div key={group.heading} className="admin-primary__group">
+              <p className="admin-primary__heading">{group.heading}</p>
+              {group.items.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => openSection(item.id)}
+                  className={`admin-primary__item ${section === item.id ? "is-active" : ""}`}
+                >
+                  <span className="admin-primary__item-label">{item.label}</span>
+                  <span className="admin-primary__item-hint">{item.hint}</span>
+                </button>
+              ))}
             </div>
           ))}
         </nav>
@@ -273,10 +237,10 @@ export function AdminPanel() {
               </button>
               <div className="min-w-0">
                 <p className="text-[10px] font-semibold tracking-[0.24em] text-gold sm:text-[11px]">
-                  ADMIN CONSOLE
+                  SITE EDITOR
                 </p>
                 <h1 className="truncate font-serif text-xl text-ink sm:text-2xl md:text-[1.85rem]">
-                  Control the site
+                  Edit your website
                 </h1>
               </div>
             </div>
@@ -302,49 +266,16 @@ export function AdminPanel() {
         </header>
 
         <div className="admin-layout">
-          <aside className="admin-rail admin-rail--sub">
-            <nav
-              className="admin-sidebar admin-sidebar--sub"
-              aria-label={`${activeGroup.label} sections`}
-            >
-              <p className="admin-sidebar__label">{activeGroup.label}</p>
-              {activeGroup.children.map(([id, label]) => (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => openSection(id)}
-                  className={`admin-nav-btn admin-nav-btn--sub ${section === id ? "is-active" : ""}`}
-                >
-                  {label}
-                </button>
-              ))}
-            </nav>
-          </aside>
-
           <div className="admin-main space-y-5 md:space-y-6">
           <div className="admin-section-heading">
             <div className="min-w-0">
               <p className="text-[11px] font-semibold tracking-[0.22em] text-gold uppercase">
-                {activeGroup.label}
+                What you are editing
               </p>
-              <h2 className="mt-1 font-serif text-2xl text-ink sm:text-3xl">{sectionLabel}</h2>
+              <h2 className="mt-1 font-serif text-2xl text-ink sm:text-3xl">{activeNav.label}</h2>
+              <p className="mt-1.5 text-sm text-ink-soft">{activeNav.hint}</p>
             </div>
-            <p className="hidden text-sm text-ink-muted md:block">Changes apply after you save</p>
-          </div>
-
-          <div className="admin-mobile-tabs" role="tablist" aria-label={`${activeGroup.label} sections`}>
-            {activeGroup.children.map(([id, label]) => (
-              <button
-                key={id}
-                type="button"
-                role="tab"
-                aria-selected={section === id}
-                onClick={() => openSection(id)}
-                className={`admin-mobile-tab ${section === id ? "is-active" : ""}`}
-              >
-                {label}
-              </button>
-            ))}
+            <p className="hidden text-sm text-ink-muted md:block">Press Save when you finish</p>
           </div>
 
           {status && <p className="admin-alert admin-alert--ok">{status}</p>}
@@ -610,7 +541,7 @@ export function AdminPanel() {
           )}
 
           {section === "shop" && (
-            <Card title="Shop page and menu">
+            <Card title="Shop wording">
               <div className="grid gap-4 md:grid-cols-2">
                 <Field label="Indoor name" value={draft.rangeLabels.indoor} onChange={(indoor) => patch("rangeLabels", { ...draft.rangeLabels, indoor })} />
                 <Field label="Outdoor name" value={draft.rangeLabels.outdoor} onChange={(outdoor) => patch("rangeLabels", { ...draft.rangeLabels, outdoor })} />
@@ -677,12 +608,15 @@ export function AdminPanel() {
                   ["eyebrow", "Small label"],
                   ["title", "Heading"],
                   ["body", "Text"],
-                  ["whatsappMessage", "WhatsApp message"],
-                  ["whatsappButton", "WhatsApp button"],
+                  ["colourLabel", "Colour field label"],
+                  ["colourPlaceholder", "Colour field example text"],
+                  ["colourHint", "Help text under the colour field"],
+                  ["whatsappMessage", "WhatsApp opening message"],
+                  ["whatsappButton", "Send on WhatsApp button"],
                   ["shopButton", "Shop button"],
                 ]}
                 value={draft.custom}
-                long={["body", "whatsappMessage"]}
+                long={["body", "colourHint", "whatsappMessage"]}
                 onChange={(custom) => patch("custom", { ...draft.custom, ...custom })}
               />
               <ImageList images={draft.custom.images} onChange={(images) => patch("custom", { ...draft.custom, images })} title="Photos" />
@@ -833,33 +767,66 @@ export function AdminPanel() {
             </Card>
           )}
 
-          {section === "tins" && (
-            <Card title="Tin sizes and price scale">
-              <p className="text-sm text-ink-soft">The product price is the 20L price. Other tins multiply that price by the number here. 1 means the same price.</p>
-              <div className="mt-4 space-y-3">
-                {draft.tinSizes.map((tin, index) => (
-                  <div key={index} className="admin-subpanel grid gap-3 md:grid-cols-[1fr_1fr_auto]">
-                    <Field label="Size" value={tin.size} onChange={(size) => {
-                      const tinSizes = draft.tinSizes.map((item, i) => i === index ? { ...item, size } : item);
-                      patch("tinSizes", tinSizes);
-                    }} />
-                    <Field label="Price multiple" value={String(tin.factor)} onChange={(factor) => {
-                      const tinSizes = draft.tinSizes.map((item, i) => i === index ? { ...item, factor: Number(factor) || 0 } : item);
-                      patch("tinSizes", tinSizes);
-                    }} />
-                    <button type="button" className="admin-btn-danger self-end pb-3" onClick={() => patch("tinSizes", draft.tinSizes.filter((_, i) => i !== index))}>Remove</button>
-                  </div>
-                ))}
-                <button type="button" className="admin-btn-outline" onClick={() => patch("tinSizes", [...draft.tinSizes, { size: "25L", factor: 4 }])}>Add a size</button>
-              </div>
-            </Card>
-          )}
-
           {section === "products" && (
-            <ProductsEditor
-              draft={draft}
-              onChange={(products) => patch("products", products)}
-            />
+            <>
+              <ProductsEditor
+                draft={draft}
+                onChange={(products) => patch("products", products)}
+                onColoursChange={(colours) => patch("colours", colours)}
+              />
+              <Card title="Tin sizes" eyebrow="Shop">
+                <p className="text-sm text-ink-soft">
+                  These sizes appear when a customer orders any paint. The paint price is the 20L price. Other tins multiply that price by the number here. 1 means the same price.
+                </p>
+                <div className="mt-4 space-y-3">
+                  {draft.tinSizes.map((tin, index) => (
+                    <div key={index} className="admin-subpanel grid gap-3 md:grid-cols-[1fr_1fr_auto]">
+                      <Field
+                        label="Size"
+                        value={tin.size}
+                        onChange={(size) => {
+                          const tinSizes = draft.tinSizes.map((item, i) =>
+                            i === index ? { ...item, size } : item
+                          );
+                          patch("tinSizes", tinSizes);
+                        }}
+                      />
+                      <Field
+                        label="Price multiple"
+                        value={String(tin.factor)}
+                        onChange={(factor) => {
+                          const tinSizes = draft.tinSizes.map((item, i) =>
+                            i === index ? { ...item, factor: Number(factor) || 0 } : item
+                          );
+                          patch("tinSizes", tinSizes);
+                        }}
+                      />
+                      <button
+                        type="button"
+                        className="admin-btn-danger self-end pb-3"
+                        onClick={() =>
+                          patch(
+                            "tinSizes",
+                            draft.tinSizes.filter((_, i) => i !== index)
+                          )
+                        }
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  ))}
+                  <button
+                    type="button"
+                    className="admin-btn-outline"
+                    onClick={() =>
+                      patch("tinSizes", [...draft.tinSizes, { size: "25L", factor: 4 }])
+                    }
+                  >
+                    Add a tin size
+                  </button>
+                </div>
+              </Card>
+            </>
           )}
 
           {section === "seo" && (
@@ -895,33 +862,66 @@ export function AdminPanel() {
 function ProductsEditor({
   draft,
   onChange,
+  onColoursChange,
 }: {
   draft: SiteContent;
   onChange: (products: Product[]) => void;
+  onColoursChange: (colours: PaintColour[]) => void;
 }) {
   const [index, setIndex] = useState(0);
+  const [colourQuery, setColourQuery] = useState("");
+  const [colourSearch, setColourSearch] = useState("");
+  const [newColourName, setNewColourName] = useState("");
+  const [newColourHex, setNewColourHex] = useState("#cc9d28");
   const product = draft.products[index] ?? draft.products[0];
 
   function update(next: Product) {
     onChange(draft.products.map((item, i) => (i === index ? next : item)));
   }
 
+  function runColourSearch(event?: React.FormEvent) {
+    event?.preventDefault();
+    setColourSearch(colourQuery.trim());
+  }
+
+  function addColourToPaint() {
+    const name = newColourName.trim();
+    if (!name) return;
+    const hex = toColorInput(newColourHex.trim() || "#cc9d28");
+    const colour: PaintColour = {
+      id: `colour-${Date.now()}`,
+      name,
+      hex,
+    };
+    onColoursChange([...draft.colours, colour]);
+    update({ ...product, colours: [...product.colours, colour] });
+    setNewColourName("");
+    setNewColourHex("#cc9d28");
+    setColourQuery("");
+    setColourSearch("");
+  }
+
+  const filteredColours = draft.colours.filter((colour) => {
+    if (!colourSearch) return true;
+    return colour.name.toLowerCase().includes(colourSearch.toLowerCase());
+  });
+
   if (!product) {
     return (
-      <Card title="Products" eyebrow="Catalogue">
+      <Card title="Your paints" eyebrow="Shop">
         <button
           type="button"
           className="admin-btn-primary"
           onClick={() => onChange([blankProduct(draft.colours)])}
         >
-          Add a product
+          Add a paint
         </button>
       </Card>
     );
   }
 
   return (
-    <Card title="Products" eyebrow="Catalogue">
+    <Card title="Your paints" eyebrow="Shop">
       <div className="grid gap-5 md:gap-6 lg:grid-cols-[220px_minmax(0,1fr)]">
         <div className="admin-subpanel space-y-1.5 overflow-x-auto md:overflow-visible">
           <div className="flex gap-2 md:block md:space-y-1.5">
@@ -944,7 +944,7 @@ function ProductsEditor({
               setIndex(draft.products.length);
             }}
           >
-            Add product
+            Add a paint
           </button>
         </div>
         <div className="grid gap-4">
@@ -1000,32 +1000,115 @@ function ProductsEditor({
               })
             }
           />
-          <div className="admin-subpanel">
-            <p className="admin-field-label">Colours for this paint</p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {draft.colours.map((colour) => {
-                const on = product.colours.some((item) => item.id === colour.id);
-                return (
-                  <button
-                    key={colour.id}
-                    type="button"
-                    onClick={() => {
-                      const colours = on
-                        ? product.colours.filter((item) => item.id !== colour.id)
-                        : [...product.colours, colour];
-                      update({ ...product, colours });
-                    }}
-                    className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition ${
-                      on
-                        ? "border-ink bg-ink text-cream shadow-sm"
-                        : "border-ink/15 bg-cream-card text-ink hover:border-ink/30"
-                    }`}
-                  >
-                    <span className="h-3 w-3 rounded-full border border-black/10" style={{ backgroundColor: colour.hex }} />
-                    {colour.name}
-                  </button>
-                );
-              })}
+          <div className="admin-subpanel space-y-4">
+            <div>
+              <p className="admin-field-label">Colours for this paint</p>
+              <p className="mt-1 text-xs text-ink-soft">
+                Tap a colour to turn it on or off for this paint.
+              </p>
+            </div>
+
+            <form
+              onSubmit={runColourSearch}
+              className="flex flex-col gap-2 sm:flex-row sm:items-end"
+            >
+              <label className="block min-w-0 flex-1">
+                <span className="admin-field-label">Find a colour</span>
+                <input
+                  type="search"
+                  value={colourQuery}
+                  onChange={(event) => setColourQuery(event.target.value)}
+                  placeholder="Type a colour name…"
+                  className="admin-field-input"
+                />
+              </label>
+              <button type="submit" className="admin-btn-outline shrink-0 sm:mb-0.5">
+                Search
+              </button>
+              {colourSearch ? (
+                <button
+                  type="button"
+                  className="admin-btn-ghost shrink-0 sm:mb-0.5"
+                  onClick={() => {
+                    setColourQuery("");
+                    setColourSearch("");
+                  }}
+                >
+                  Clear
+                </button>
+              ) : null}
+            </form>
+
+            <div className="flex flex-wrap gap-2">
+              {filteredColours.length === 0 ? (
+                <p className="text-sm text-ink-soft">
+                  No colours match “{colourSearch}”. Add a new one below.
+                </p>
+              ) : (
+                filteredColours.map((colour) => {
+                  const on = product.colours.some((item) => item.id === colour.id);
+                  return (
+                    <button
+                      key={colour.id}
+                      type="button"
+                      onClick={() => {
+                        const colours = on
+                          ? product.colours.filter((item) => item.id !== colour.id)
+                          : [...product.colours, colour];
+                        update({ ...product, colours });
+                      }}
+                      className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition ${
+                        on
+                          ? "border-ink bg-ink text-cream shadow-sm"
+                          : "border-ink/15 bg-cream-card text-ink hover:border-ink/30"
+                      }`}
+                    >
+                      <span
+                        className="h-3 w-3 rounded-full border border-black/10"
+                        style={{ backgroundColor: colour.hex }}
+                      />
+                      {colour.name}
+                    </button>
+                  );
+                })
+              )}
+            </div>
+
+            <div className="border-t border-ink/10 pt-4">
+              <p className="admin-field-label">Add a new colour</p>
+              <p className="mt-1 text-xs text-ink-soft">
+                Saves to the colour chart and turns it on for this paint.
+              </p>
+              <div className="mt-3 grid gap-3 sm:grid-cols-[auto_1fr_140px_auto] sm:items-end">
+                <label className="block">
+                  <span className="admin-field-label">Swatch</span>
+                  <input
+                    type="color"
+                    aria-label="New colour swatch"
+                    value={toColorInput(newColourHex)}
+                    onChange={(event) => setNewColourHex(event.target.value)}
+                    className="mt-1.5 block h-11 w-14 cursor-pointer rounded-xl border border-ink/10 bg-cream"
+                  />
+                </label>
+                <Field
+                  label="Name"
+                  value={newColourName}
+                  onChange={setNewColourName}
+                />
+                <Field
+                  label="Hex"
+                  value={newColourHex}
+                  onChange={setNewColourHex}
+                />
+                <button
+                  type="button"
+                  className="admin-btn-primary"
+                  disabled={!newColourName.trim()}
+                  onClick={addColourToPaint}
+                >
+                  Add colour
+                </button>
+              </div>
             </div>
           </div>
           <button
