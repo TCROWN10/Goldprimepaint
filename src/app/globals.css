@@ -444,11 +444,17 @@ input:disabled,
 }
 
 .card-surface .card-arrow {
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card-surface:hover .card-arrow {
-  transform: translateX(4px);
+  transform: translateX(3px);
+  box-shadow: 0 6px 16px rgba(204, 157, 40, 0.28);
 }
 
 .card-surface .card-info {

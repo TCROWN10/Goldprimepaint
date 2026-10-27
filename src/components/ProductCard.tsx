@@ -63,10 +63,18 @@ export function ProductCard({
             </div>
           </div>
           <span
-            className="card-arrow mt-1 shrink-0 text-ink"
+            className="card-arrow mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-ink/15 text-ink transition group-hover:border-gold group-hover:bg-gold group-hover:text-ink"
             aria-hidden
           >
-            →
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5 12h14M13 6l6 6-6 6"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </span>
         </div>
       </Link>
