@@ -192,16 +192,41 @@ export function orderMessage(
     price: number;
   },
 ) {
+  return cartOrderMessage(copy, [opts]);
+}
+
+export function cartOrderMessage(
+  copy: { greeting: string; intro: string; closing: string },
+  items: {
+    productName: string;
+    range: string;
+    category: string;
+    colour: string;
+    size: string;
+    quantity: number;
+    price: number;
+  }[],
+) {
+  const lines = items.flatMap((item, index) => [
+    items.length > 1 ? `${index + 1}. ${item.productName}` : `• ${item.productName}`,
+    `   ${item.range} · ${item.category}`,
+    `   Colour: ${item.colour}`,
+    `   Tin: ${item.size}`,
+    `   Quantity: ${item.quantity}`,
+    `   Price: ${formatPrice(item.price)} each`,
+    `   Line total: ${formatPrice(item.price * item.quantity)}`,
+    ``,
+  ]);
+
+  const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
   return [
     copy.greeting,
     ``,
     copy.intro,
-    `• ${opts.productName}`,
-    `• ${opts.range} · ${opts.category}`,
-    `• Colour: ${opts.colour}`,
-    `• Tin: ${opts.size}`,
-    `• Quantity: ${opts.quantity}`,
-    `• Price: ${formatPrice(opts.price)} each`,
+    ``,
+    ...lines,
+    `Order total: ${formatPrice(total)}`,
     ``,
     copy.closing,
   ].join("\n");

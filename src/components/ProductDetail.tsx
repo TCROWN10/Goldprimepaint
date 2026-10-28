@@ -18,7 +18,7 @@ import { useApp } from "@/lib/store";
 
 export function ProductDetail({ product }: { product: Product }) {
   const router = useRouter();
-  const { setPendingOrder, selectedColour, setSelectedColour } = useApp();
+  const { addToCart, selectedColour, setSelectedColour } = useApp();
   const content = useContent();
   const tin = paintImage(product);
   const interiorSamples = sampleImages(product, "indoor");
@@ -37,14 +37,15 @@ export function ProductDetail({ product }: { product: Product }) {
     sizes.includes("20L") ? "20L" : sizes[0] ?? null,
   );
   const [qty, setQty] = useState(1);
+  const [addedNote, setAddedNote] = useState(false);
 
   const unitPrice = tinPrice(product.price, size ?? sizes[0] ?? "20L", content.tinSizes);
   const canOrder = size !== null && Boolean(colour);
   if (!colour) return null;
 
-  function handleOrder() {
-    if (!canOrder || size === null) return;
-    setPendingOrder({
+  function buildLine() {
+    if (!canOrder || size === null || !colour) return null;
+    return {
       productSlug: product.slug,
       productName: product.name,
       category: product.category,
@@ -55,7 +56,21 @@ export function ProductDetail({ product }: { product: Product }) {
       quantity: qty,
       price: unitPrice,
       image: tin || view.src,
-    });
+    };
+  }
+
+  function handleAddToCart() {
+    const line = buildLine();
+    if (!line) return;
+    addToCart(line);
+    setAddedNote(true);
+    window.setTimeout(() => setAddedNote(false), 1800);
+  }
+
+  function handleOrderNow() {
+    const line = buildLine();
+    if (!line) return;
+    addToCart(line);
     router.push("/checkout");
   }
 
@@ -236,14 +251,24 @@ export function ProductDetail({ product }: { product: Product }) {
           </div>
         </div>
 
-        <div className="mt-8 sticky bottom-4 z-10 lg:static lg:mt-10">
+        <div className="mt-8 sticky bottom-4 z-10 space-y-2.5 lg:static lg:mt-10">
           <button
             type="button"
             disabled={!canOrder}
-            onClick={handleOrder}
+            onClick={handleAddToCart}
             className="flex w-full items-center justify-center rounded-full bg-gold py-4 text-[15px] font-semibold tracking-wide text-ink shadow-[0_10px_30px_rgba(204,157,40,0.35)] transition hover:bg-gold/90 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {content.productUi.orderButton} — {formatPrice(unitPrice * qty)}
+            {addedNote
+              ? "Added to cart"
+              : `${content.productUi.addToCartButton} — ${formatPrice(unitPrice * qty)}`}
+          </button>
+          <button
+            type="button"
+            disabled={!canOrder}
+            onClick={handleOrderNow}
+            className="flex w-full items-center justify-center rounded-full border border-ink/20 bg-cream-card py-3.5 text-[14px] font-semibold tracking-wide text-ink transition hover:border-ink/40 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {content.productUi.orderButton}
           </button>
         </div>
       </div>

@@ -667,7 +667,8 @@ export function AdminPanel() {
                     ["coverageLabel", "Coverage link"],
                     ["missingColour", "Missing colour link"],
                     ["qtyLabel", "Quantity label"],
-                    ["orderButton", "Order button"],
+                    ["addToCartButton", "Add to cart button"],
+                    ["orderButton", "Order now button"],
                   ]}
                   value={draft.productUi}
                   onChange={(productUi) => patch("productUi", productUi)}

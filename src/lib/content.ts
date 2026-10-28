@@ -160,6 +160,7 @@ export type SiteContent = {
     missingColour: string;
     qtyLabel: string;
     orderButton: string;
+    addToCartButton: string;
   };
   colours: PaintColour[];
   tinSizes: TinSize[];
@@ -393,7 +394,8 @@ export function defaultSiteContent(): SiteContent {
       coverageLabel: "Coverage guide",
       missingColour: "Need a different colour?",
       qtyLabel: "QTY",
-      orderButton: "Order via WhatsApp",
+      orderButton: "Order now",
+      addToCartButton: "Add to cart",
     },
     colours: COLOURS.map((colour) => ({ ...colour })),
     tinSizes: [

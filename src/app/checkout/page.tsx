@@ -6,8 +6,9 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   buildWhatsAppUrl,
+  cartOrderMessage,
   formatPrice,
-  orderMessage,
+  isTinPhoto,
   rangeLabel,
 } from "@/lib/data";
 import { useContent } from "@/lib/content-context";
@@ -15,17 +16,17 @@ import { useApp } from "@/lib/store";
 import { Header } from "@/components/Header";
 
 export default function CheckoutPage() {
-  const { pendingOrder } = useApp();
+  const { cart, cartTotal, cartCount, clearCart } = useApp();
   const content = useContent();
   const router = useRouter();
 
   useEffect(() => {
-    if (!pendingOrder) {
+    if (cartCount === 0) {
       router.replace("/shop");
     }
-  }, [pendingOrder, router]);
+  }, [cartCount, router]);
 
-  if (!pendingOrder) {
+  if (cartCount === 0) {
     return (
       <main className="flex flex-1 items-center justify-center px-5 py-24 text-ink-soft">
         Loading order…
@@ -33,20 +34,22 @@ export default function CheckoutPage() {
     );
   }
 
-  const total = pendingOrder.price * pendingOrder.quantity;
-  const message = orderMessage(content.order, {
-    productName: pendingOrder.productName,
-    range: rangeLabel(pendingOrder.range, content.rangeLabels),
-    category: pendingOrder.category,
-    colour: pendingOrder.colour,
-    size: pendingOrder.size,
-    quantity: pendingOrder.quantity,
-    price: pendingOrder.price,
-  });
+  const message = cartOrderMessage(
+    content.order,
+    cart.map((item) => ({
+      productName: item.productName,
+      range: rangeLabel(item.range, content.rangeLabels),
+      category: item.category,
+      colour: item.colour,
+      size: item.size,
+      quantity: item.quantity,
+      price: item.price,
+    }))
+  );
 
   return (
     <>
-      <Header variant="back" backHref={`/product/${pendingOrder.productSlug}`} />
+      <Header variant="back" backHref="/shop" />
       <main className="flex flex-1 flex-col">
         <div className="mx-auto flex w-full max-w-lg flex-1 flex-col px-5 py-8 md:max-w-xl md:px-8 md:py-12 lg:max-w-2xl">
           <p className="text-center text-[11px] font-medium tracking-[0.28em] text-ink-muted">
@@ -55,51 +58,81 @@ export default function CheckoutPage() {
           <h1 className="mt-2 text-center font-serif text-3xl text-ink md:text-4xl">
             {content.checkout.title}
           </h1>
+          <p className="mt-2 text-center text-sm text-ink-soft">
+            {cartCount === 1
+              ? "1 paint ready to send"
+              : `${cartCount} paints ready to send`}
+          </p>
 
-          <article className="card-soft mt-8 overflow-hidden rounded-[1.75rem] bg-cream-card shadow-[0_16px_50px_rgba(3,37,80,0.08)] ring-1 ring-ink/5 animate-fade-up">
-            <div className="relative aspect-[16/11] overflow-hidden">
-              <Image
-                src={pendingOrder.image}
-                alt={pendingOrder.productName}
-                fill
-                className="object-cover transition duration-700 hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 640px"
-              />
-              <span className="absolute left-4 top-4 text-[11px] font-medium tracking-[0.16em] text-cream drop-shadow">
-                {rangeLabel(pendingOrder.range, content.rangeLabels).toUpperCase()} ·{" "}
-                {pendingOrder.category.toUpperCase()}
-              </span>
-            </div>
+          <div className="mt-8 space-y-3">
+            {cart.map((item) => (
+              <article
+                key={item.id}
+                className="card-soft overflow-hidden rounded-[1.5rem] bg-cream-card shadow-[0_12px_36px_rgba(3,37,80,0.07)] ring-1 ring-ink/5"
+              >
+                <div className="flex gap-3 p-3 sm:gap-4 sm:p-4">
+                  <div className="relative h-24 w-20 shrink-0 overflow-hidden rounded-xl bg-cream-deep sm:h-28 sm:w-24">
+                    {item.image ? (
+                      <Image
+                        src={item.image}
+                        alt={item.productName}
+                        fill
+                        unoptimized={isTinPhoto(item.image)}
+                        className={
+                          isTinPhoto(item.image)
+                            ? "object-contain p-1"
+                            : "object-cover"
+                        }
+                        sizes="96px"
+                      />
+                    ) : (
+                      <div
+                        className="absolute inset-0"
+                        style={{ backgroundColor: item.colourHex }}
+                      />
+                    )}
+                  </div>
+                  <div className="min-w-0 flex-1 py-0.5">
+                    <div className="flex items-start justify-between gap-2">
+                      <h2 className="font-serif text-xl text-ink sm:text-2xl">
+                        {item.productName}
+                      </h2>
+                      <p className="shrink-0 text-sm font-semibold text-ink sm:text-base">
+                        {formatPrice(item.price * item.quantity)}
+                      </p>
+                    </div>
+                    <p className="mt-1 text-[12px] tracking-[0.12em] text-ink-muted uppercase">
+                      {rangeLabel(item.range, content.rangeLabels)} · {item.category}
+                    </p>
+                    <dl className="mt-3 space-y-1.5 text-sm">
+                      <Row label={content.checkout.colourLabel} value={item.colour} />
+                      <Row label={content.checkout.tinLabel} value={item.size} />
+                      <Row
+                        label={content.checkout.quantityLabel}
+                        value={String(item.quantity)}
+                      />
+                    </dl>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
 
-            <div className="px-5 py-5 md:px-7 md:py-6">
-              <div className="flex items-start justify-between gap-4">
-                <h2 className="font-serif text-xl text-ink md:text-2xl">
-                  {pendingOrder.productName}
-                </h2>
-                <p className="shrink-0 text-base font-semibold text-ink md:text-lg">
-                  {formatPrice(pendingOrder.price)}
-                </p>
-              </div>
+          <div className="mt-5 flex items-center justify-between rounded-2xl bg-cream-card px-4 py-3.5 ring-1 ring-ink/5">
+            <span className="text-sm text-ink-soft">{content.checkout.totalLabel}</span>
+            <span className="font-serif text-2xl text-ink">
+              {formatPrice(cartTotal)}
+            </span>
+          </div>
 
-              <dl className="mt-5 divide-y divide-ink/8">
-                <Row label={content.checkout.colourLabel} value={pendingOrder.colour} />
-                <Row label={content.checkout.tinLabel} value={pendingOrder.size} />
-                <Row label={content.checkout.quantityLabel} value={String(pendingOrder.quantity)} />
-                {pendingOrder.quantity > 1 && (
-                  <Row label={content.checkout.totalLabel} value={formatPrice(total)} />
-                )}
-              </dl>
-
-              <p className="mt-5 flex items-start gap-2 text-sm text-ink-soft">
-                <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-whatsapp/15 text-whatsapp-deep">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-                  </svg>
-                </span>
-                {content.checkout.note}
-              </p>
-            </div>
-          </article>
+          <p className="mt-5 flex items-start gap-2 text-sm text-ink-soft">
+            <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-whatsapp/15 text-whatsapp-deep">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+              </svg>
+            </span>
+            {content.checkout.note}
+          </p>
 
           <div className="mt-auto pt-8">
             <a
@@ -107,7 +140,7 @@ export default function CheckoutPage() {
               target="_blank"
               rel="noreferrer"
               onClick={() => {
-                // navigate to thank-you after opening WA
+                clearCart();
                 setTimeout(() => {
                   window.location.href = "/order-sent";
                 }, 400);
@@ -120,7 +153,7 @@ export default function CheckoutPage() {
               {content.checkout.continueButton}
             </a>
             <Link
-              href={`/product/${pendingOrder.productSlug}`}
+              href="/shop"
               className="mt-3 block text-center text-sm text-ink-soft transition hover:text-ink"
             >
               {content.checkout.editLink}
@@ -134,11 +167,11 @@ export default function CheckoutPage() {
 
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between py-3.5">
-      <dt className="text-[11px] font-medium tracking-[0.16em] text-ink-muted uppercase">
+    <div className="flex items-center justify-between gap-3">
+      <dt className="text-[11px] font-medium tracking-[0.14em] text-ink-muted uppercase">
         {label}
       </dt>
-      <dd className="text-[15px] text-ink">{value}</dd>
+      <dd className="text-[14px] text-ink">{value}</dd>
     </div>
   );
 }
