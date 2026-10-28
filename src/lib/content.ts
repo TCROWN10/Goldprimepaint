@@ -185,8 +185,8 @@ export function defaultSiteContent(): SiteContent {
       city: "",
       country: "Nigeria",
       locationLine: "NIGERIA",
-      instagramUrl: "https://instagram.com/goldprimepaints",
-      facebookUrl: "https://facebook.com/goldprimepaints",
+      instagramUrl: "https://www.instagram.com/goldprimepaints",
+      facebookUrl: "https://www.facebook.com/p/Gold-Prime-Paints-61571745471966/",
       tiktokUrl: "",
     },
     seo: {
@@ -423,9 +423,20 @@ export function normalizeContent(saved: Partial<SiteContent> | null | undefined)
   const base = defaultSiteContent();
   if (!saved || typeof saved !== "object") return base;
 
+  const business = mergeSection(base.business, saved.business);
+  const facebook = (business.facebookUrl || "").trim();
+  // Old vanity URL does not open the real Goldprime page.
+  if (
+    !facebook ||
+    /facebook\.com\/goldprimepaints\/?$/i.test(facebook) ||
+    /facebook\.com\/pages\/goldprimepaints/i.test(facebook)
+  ) {
+    business.facebookUrl = base.business.facebookUrl;
+  }
+
   const content: SiteContent = {
     ...base,
-    business: mergeSection(base.business, saved.business),
+    business,
     seo: mergeSection(base.seo, saved.seo),
     nav: mergeSection(base.nav, saved.nav),
     rangeLabels: mergeSection(base.rangeLabels, saved.rangeLabels),
