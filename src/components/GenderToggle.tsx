@@ -48,7 +48,7 @@ export function GenderToggle({
             key={option}
             type="button"
             onClick={() => setRange(option)}
-            className={`${btn} rounded-full font-semibold tracking-[0.14em] uppercase transition-all duration-300 ${
+            className={`${btn} flex-1 rounded-full font-semibold tracking-[0.14em] uppercase transition-all duration-300 touch-manipulation sm:flex-none ${
               active
                 ? "bg-forest text-cream shadow-sm"
                 : "bg-transparent text-ink-soft hover:text-ink"
