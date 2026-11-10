@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
-import { isProjectPhoto } from "@/lib/data";
+import { mediaUnoptimized } from "@/lib/data";
 import { useContent } from "@/lib/content-context";
 
 export function PaintRanges() {
@@ -34,7 +34,7 @@ export function PaintRanges() {
                   src={range.image}
                   alt={range.alt}
                   fill
-                  unoptimized={isProjectPhoto(range.image)}
+                  unoptimized={mediaUnoptimized(range.image)}
                   sizes="(max-width: 640px) 72vw, (max-width: 1024px) 30vw, 16rem"
                   className="reveal-zoom__media object-cover transition duration-700 group-hover:scale-105"
                 />

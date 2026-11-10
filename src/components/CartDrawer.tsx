@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import { formatPrice, isTinPhoto, rangeLabel } from "@/lib/data";
+import { formatPrice, mediaUnoptimized, rangeLabel } from "@/lib/data";
 import { useContent } from "@/lib/content-context";
 import { useApp } from "@/lib/store";
 
@@ -92,9 +92,9 @@ export function CartDrawer() {
                         src={item.image}
                         alt={item.productName}
                         fill
-                        unoptimized={isTinPhoto(item.image)}
+                        unoptimized={mediaUnoptimized(item.image)}
                         className={
-                          isTinPhoto(item.image)
+                          mediaUnoptimized(item.image)
                             ? "object-contain p-1"
                             : "object-cover"
                         }

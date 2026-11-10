@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
-import { isProjectPhoto } from "@/lib/data";
+import { mediaUnoptimized } from "@/lib/data";
 import { useContent } from "@/lib/content-context";
 
 export function SolutionsSplit() {
@@ -26,7 +26,7 @@ export function SolutionsSplit() {
                   src={img.src}
                   alt={img.alt}
                   fill
-                  unoptimized={isProjectPhoto(img.src)}
+                  unoptimized={mediaUnoptimized(img.src)}
                   sizes="(max-width: 1024px) 45vw, 22vw"
                   className="reveal-zoom__media object-cover transition duration-700 hover:scale-[1.04]"
                 />

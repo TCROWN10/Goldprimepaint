@@ -6,6 +6,7 @@ import { useState } from "react";
 import {
   formatPrice,
   isTinPhoto,
+  mediaUnoptimized,
   paintImage,
   placeLabel,
   projectLabel,
@@ -90,7 +91,7 @@ export function ProductDetail({ product }: { product: Product }) {
               }
               fill
               priority
-              unoptimized={view.kind === "sample" || isTinPhoto(view.src)}
+              unoptimized={view.kind === "sample" || mediaUnoptimized(view.src)}
               sizes="(max-width: 1024px) 100vw, 50vw"
               className={view.kind === "paint" ? "exterior-photo object-contain" : "object-cover"}
             />
@@ -311,7 +312,11 @@ function SampleRow({
               alt=""
               fill
               unoptimized
-              className={isTinPhoto(src) ? "exterior-photo object-contain" : "object-cover"}
+              className={
+                isTinPhoto(src) || mediaUnoptimized(src)
+                  ? "exterior-photo object-contain"
+                  : "object-cover"
+              }
               sizes="96px"
             />
           </button>

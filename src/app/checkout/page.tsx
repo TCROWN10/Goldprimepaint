@@ -8,7 +8,7 @@ import {
   buildWhatsAppUrl,
   cartOrderMessage,
   formatPrice,
-  isTinPhoto,
+  mediaUnoptimized,
   rangeLabel,
 } from "@/lib/data";
 import { useContent } from "@/lib/content-context";
@@ -77,9 +77,9 @@ export default function CheckoutPage() {
                         src={item.image}
                         alt={item.productName}
                         fill
-                        unoptimized={isTinPhoto(item.image)}
+                        unoptimized={mediaUnoptimized(item.image)}
                         className={
-                          isTinPhoto(item.image)
+                          mediaUnoptimized(item.image)
                             ? "object-contain p-1"
                             : "object-cover"
                         }

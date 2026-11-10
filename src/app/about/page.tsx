@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { AnimateIn } from "@/components/AnimateIn";
-import { isExteriorPhoto } from "@/lib/data";
+import { isExteriorPhoto, mediaUnoptimized } from "@/lib/data";
 import { getSiteContent } from "@/lib/content";
 
 export const metadata = {
@@ -64,7 +64,7 @@ export default async function AboutPage() {
                       src={item.image}
                       alt={isExteriorPhoto(item.image) ? "Exterior" : item.label}
                       fill
-                      unoptimized={isExteriorPhoto(item.image)}
+                      unoptimized={mediaUnoptimized(item.image) || isExteriorPhoto(item.image)}
                       className={
                         isExteriorPhoto(item.image)
                           ? "object-cover"

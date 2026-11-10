@@ -10,7 +10,7 @@ import {
   useState,
   type PointerEvent as ReactPointerEvent,
 } from "react";
-import { formatPrice, isProjectPhoto, productShots, projectLabel, type Product } from "@/lib/data";
+import { formatPrice, mediaUnoptimized, productShots, projectLabel, type Product } from "@/lib/data";
 import { AnimateIn } from "@/components/AnimateIn";
 import { useContent } from "@/lib/content-context";
 import { useApp } from "@/lib/store";
@@ -154,7 +154,7 @@ export function HomeHeroCarousel({ products }: { products: Product[] }) {
                 alt={projectLabel(src) ? `${projectLabel(src)}. ${product.name}` : product.name}
                 fill
                 priority={i === 0}
-                unoptimized={isProjectPhoto(src)}
+                unoptimized={mediaUnoptimized(src)}
                 draggable={false}
                 sizes="(max-width: 1024px) 100vw, 70vw"
                 className={`pointer-events-none select-none ${

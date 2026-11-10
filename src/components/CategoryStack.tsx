@@ -11,7 +11,7 @@ import {
   type PointerEvent as ReactPointerEvent,
 } from "react";
 import { AnimateIn } from "@/components/AnimateIn";
-import { isTinPhoto, paintImage, placeLabel, type Product } from "@/lib/data";
+import { mediaUnoptimized, paintImage, placeLabel, type Product } from "@/lib/data";
 import { useContent } from "@/lib/content-context";
 
 const AUTO_MS = 4500;
@@ -57,7 +57,7 @@ function PaintCard({
             src={tin}
             alt={product.name}
             fill
-            unoptimized={isTinPhoto(tin)}
+            unoptimized={mediaUnoptimized(tin)}
             sizes="(max-width: 768px) 92vw, (max-width: 1024px) 45vw, 33vw"
             className="exterior-photo object-contain transition duration-700 group-hover:scale-[1.03]"
             draggable={false}

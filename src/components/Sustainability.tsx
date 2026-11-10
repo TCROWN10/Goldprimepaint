@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
-import { isProjectPhoto } from "@/lib/data";
+import { mediaUnoptimized } from "@/lib/data";
 import { useContent } from "@/lib/content-context";
 
 export function Sustainability() {
@@ -21,7 +21,7 @@ export function Sustainability() {
             src={src}
             alt={home.sustainImage.alt}
             fill
-            unoptimized={isProjectPhoto(src)}
+            unoptimized={mediaUnoptimized(src)}
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="reveal-zoom__media object-cover"
           />

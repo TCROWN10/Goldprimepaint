@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Product } from "@/lib/data";
-import { formatPrice, isTinPhoto, paintImage, placeLabel } from "@/lib/data";
+import { formatPrice, mediaUnoptimized, paintImage, placeLabel } from "@/lib/data";
 import { AnimateIn } from "@/components/AnimateIn";
 import { useContent } from "@/lib/content-context";
 
@@ -28,7 +28,7 @@ export function ProductCard({
               src={tin}
               alt={product.name}
               fill
-              unoptimized={isTinPhoto(tin)}
+              unoptimized={mediaUnoptimized(tin)}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               className="exterior-photo object-contain"
             />

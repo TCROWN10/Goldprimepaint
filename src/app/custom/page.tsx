@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Header } from "@/components/Header";
 import { AnimateIn } from "@/components/AnimateIn";
 import { CustomColourRequest } from "@/components/CustomColourRequest";
-import { isExteriorPhoto } from "@/lib/data";
+import { isExteriorPhoto, mediaUnoptimized } from "@/lib/data";
 import { getSiteContent } from "@/lib/content";
 
 export const metadata = {
@@ -45,7 +45,7 @@ export default async function CustomPage() {
                     src={custom.images[0]?.src || ""}
                     alt={isExteriorPhoto(custom.images[0]?.src || "") ? "Exterior" : custom.images[0]?.alt || ""}
                     fill
-                    unoptimized={isExteriorPhoto(custom.images[0]?.src || "")}
+                    unoptimized={mediaUnoptimized(custom.images[0]?.src || "") || isExteriorPhoto(custom.images[0]?.src || "")}
                     className={
                       isExteriorPhoto(custom.images[0]?.src || "")
                         ? "object-cover"
@@ -66,7 +66,7 @@ export default async function CustomPage() {
                     src={custom.images[1]?.src || ""}
                     alt={isExteriorPhoto(custom.images[1]?.src || "") ? "Exterior" : custom.images[1]?.alt || ""}
                     fill
-                    unoptimized={isExteriorPhoto(custom.images[1]?.src || "")}
+                    unoptimized={mediaUnoptimized(custom.images[1]?.src || "") || isExteriorPhoto(custom.images[1]?.src || "")}
                     className={
                       isExteriorPhoto(custom.images[1]?.src || "")
                         ? "object-cover"
@@ -82,7 +82,7 @@ export default async function CustomPage() {
                     src={custom.images[2]?.src || ""}
                     alt={isExteriorPhoto(custom.images[2]?.src || "") ? "Exterior" : custom.images[2]?.alt || ""}
                     fill
-                    unoptimized={isExteriorPhoto(custom.images[2]?.src || "")}
+                    unoptimized={mediaUnoptimized(custom.images[2]?.src || "") || isExteriorPhoto(custom.images[2]?.src || "")}
                     className={
                       isExteriorPhoto(custom.images[2]?.src || "")
                         ? "object-cover"

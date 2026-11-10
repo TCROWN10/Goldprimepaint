@@ -29,6 +29,19 @@ export type Product = {
   badge?: string;
 };
 
+export function isAbsoluteMediaUrl(src: string) {
+  return /^https?:\/\//i.test(src);
+}
+
+export function isUploadedPhoto(src: string) {
+  const value = decodeURIComponent(src).toLowerCase();
+  return (
+    value.includes("blob.vercel-storage.com") ||
+    value.includes("/uploads/") ||
+    value.includes("goldprime/uploads/")
+  );
+}
+
 export function isExteriorPhoto(src: string) {
   return src.includes("Outdoor-look-") || src.includes("Gravitex");
 }
@@ -50,6 +63,16 @@ export function isProjectPhoto(src: string) {
   return isExteriorPhoto(src) || isInteriorPhoto(src) || isTinPhoto(src);
 }
 
+/** Skip Next image optimization for local uploads, blob hosts, and catalogue tins. */
+export function mediaUnoptimized(src: string) {
+  return (
+    isAbsoluteMediaUrl(src) ||
+    isUploadedPhoto(src) ||
+    isTinPhoto(src) ||
+    isProjectPhoto(src)
+  );
+}
+
 export function projectLabel(src: string) {
   if (isExteriorPhoto(src)) return "EXTERIOR";
   if (isInteriorPhoto(src)) return "INTERIOR";
@@ -69,9 +92,15 @@ export function productImages(product: Product) {
   ];
 }
 
-/** The tin itself. Sample photos of finished walls stay out of this. */
+/** Main product photo: tin art first, then admin uploads, then the primary image. */
 export function paintImage(product: Product) {
-  return productImages(product).find((src) => isTinPhoto(src)) ?? "";
+  const images = productImages(product);
+  const tin = images.find((src) => isTinPhoto(src));
+  if (tin) return tin;
+  const uploaded = images.find((src) => isUploadedPhoto(src));
+  if (uploaded) return uploaded;
+  if (product.image?.trim()) return product.image.trim();
+  return images[0] ?? "";
 }
 
 /** Finished-wall photos for the interior or exterior sample. */
