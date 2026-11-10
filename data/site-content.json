@@ -1,0 +1,1444 @@
+{
+  "business": {
+    "name": "GOLDPRIME PAINTS",
+    "company": "Goldprime Global Nig. Ltd.",
+    "phoneDisplay": "0805 027 2664",
+    "phoneSecondary": "0916 799 8541",
+    "whatsappNumber": "2348050272664",
+    "whatsappCareMessage": "Hello Goldprime — I'd like customer care support.",
+    "email": "info@goldprimepaints.com",
+    "website": "https://www.goldprimepaints.com",
+    "address": "",
+    "city": "",
+    "country": "Nigeria",
+    "locationLine": "NIGERIA",
+    "instagramUrl": "https://www.instagram.com/goldprimepaints",
+    "facebookUrl": "https://www.facebook.com/p/Gold-Prime-Paints-61571745471966/",
+    "tiktokUrl": ""
+  },
+  "seo": {
+    "title": "GOLDPRIME PAINTS — Choose Your Shade",
+    "titleSuffix": "GOLDPRIME PAINTS",
+    "description": "Goldprime Global Nig. manufactures Acrylic Emulsion, Satin, Gravitex, and Trowel. Customer care 0805 027 2664."
+  },
+  "nav": {
+    "shop": "Shop",
+    "custom": "Custom",
+    "about": "About",
+    "contact": "Contact",
+    "shopCta": "Choose your shade",
+    "back": "Back"
+  },
+  "rangeLabels": {
+    "indoor": "Interior",
+    "outdoor": "Exterior"
+  },
+  "home": {
+    "browseLabel": "Browse the collection",
+    "customCta": "Request a custom colour",
+    "ratingText": "Premium quality. Lasting beauty.",
+    "headline": "Choose your shade.",
+    "subhead": "Make it yours. Premium interior and exterior paints from Goldprime.",
+    "shopNow": "Shop now",
+    "heroStoryLink": "Read our story →",
+    "categoriesEyebrow": "THE PAINTS",
+    "categoriesTitle": "The paints",
+    "storyTitle": "Who we are",
+    "storyBody": "At Goldprime Paints, we don't just add colour. We create lasting impressions through quality, innovation and excellence.",
+    "storyLink": "Read our story →",
+    "storyImages": [
+      {
+        "src": "/Outdoor-look-1.png",
+        "alt": "White and charcoal exterior finished with Goldprime"
+      },
+      {
+        "src": "/Outdoor-look-3.png",
+        "alt": "Peach and white exterior"
+      },
+      {
+        "src": "/Outdoor-look-4.png",
+        "alt": "White and brown exterior"
+      }
+    ],
+    "testimonialEyebrow": "PEOPLE SAY ABOUT US",
+    "testimonialTitle": "Clients' Testimonials",
+    "rangesTitle": "Discover Our Premium Paint Ranges",
+    "paintRanges": [
+      {
+        "title": "Acrylic Emulsion",
+        "body": "Innovative and versatile paints for a variety of surfaces. Ideal for residential and commercial projects, with exceptional coverage and ease of application.",
+        "image": "/Outdoor-look-2.png",
+        "alt": "White and blue exterior finished with Goldprime emulsion",
+        "slug": "acrylic-emulsion"
+      },
+      {
+        "title": "Satin",
+        "body": "Premium paints designed for superior performance and durability. Perfect for residential and commercial spaces that need a flawless, lasting finish.",
+        "image": "/Satin%20finish%20-2.jpeg",
+        "alt": "Interior room with Goldprime satin finish",
+        "slug": "satin"
+      },
+      {
+        "title": "Gravitex",
+        "body": "Traditional, high-quality textured coatings with excellent coverage and durability. Ideal for residential and commercial applications that need lasting beauty.",
+        "image": "/Gold%20prime%20trowel%20finish-1.jpeg",
+        "alt": "Textured interior finished with Goldprime Gravitex",
+        "slug": "gravitex"
+      }
+    ],
+    "solutionsTitle": "Innovative Solutions for Every Space",
+    "solutionsBody": "An exceptionally wide range of colour schemes are available for discerning clients, enabling colour needs to be achieved at all times.\n\nGoldprime Paint is the right solution for all of Nigeria’s paint needs, thanks to our world-class technical assistance, application training, and dedicated client service professionals.",
+    "solutionsCta": "View Our Ranges",
+    "solutionsImages": [
+      {
+        "src": "/Outdoor-look-1.png",
+        "alt": "Modern exterior finished with Goldprime"
+      },
+      {
+        "src": "/Satin%20finish%20-2.jpeg",
+        "alt": "Living space finished with Goldprime satin"
+      }
+    ],
+    "sustainTitle": "Our Commitment to Sustainability",
+    "sustainIntro": "At Goldprime Paints, we are dedicated to creating products that not only enhance the beauty of your spaces but also contribute to a healthier planet. Our commitment to sustainability is reflected in every aspect of our business.",
+    "sustainPoints": [
+      {
+        "title": "Eco-Friendly Products",
+        "body": "We formulate paints with care for indoor air quality and lasting performance, so homes and workplaces stay beautiful without unnecessary compromise."
+      },
+      {
+        "title": "Sustainable Practices",
+        "body": "Our manufacturing focuses on minimizing waste and using resources responsibly, ensuring every tin delivers value with less environmental impact."
+      },
+      {
+        "title": "Community Engagement",
+        "body": "We support local initiatives and share application know-how so Nigerian communities can build and finish spaces with confidence."
+      }
+    ],
+    "sustainClosing": "Join us in making a positive impact on the environment while enjoying the finest paints and coatings available.",
+    "sustainCta": "Contact Us",
+    "sustainImage": {
+      "src": "/Outdoor-look-4.png",
+      "alt": "Exterior finished with Goldprime paints"
+    },
+    "swipeHint": "Swipe up for next finish",
+    "colourLabel": "COLOUR",
+    "dragHint": "DRAG TO ROTATE"
+  },
+  "shop": {
+    "eyebrow": "COLLECTION",
+    "empty": "No finishes in this collection yet.",
+    "chartEyebrow": "COLOUR CHART",
+    "chartTitle": "Premium quality. Lasting beauty."
+  },
+  "about": {
+    "eyebrow": "WHO WE ARE",
+    "title": "GoldPrime Paints",
+    "body": "GoldPrime Paints is the flagship brand of Goldprime Global Nig. Ltd., a Nigerian-owned company specializing in the manufacturing, supply and professional application of premium decorative and protective coating solutions.\n\nDriven by a passion for excellence, we provide innovative paint products that combine superior quality, aesthetic appeal, and long lasting performance. Our solutions are carefully developed to meet the needs of homeowners, architects, contractors, property developers, government institutions and corporate organizations seeking reliable finishing solutions.\n\nWith a commitment to continuous improvement and customer satisfaction, Goldprime has successfully contributed to numerous residential, commercial and institutional projects, delivering finishes that enhance the beauty while protecting surfaces against harsh environmental conditions.\n\nBeyond manufacturing quality paints, we offer professional painting services, colour consultation, surface preparation and technical support, ensuring that every project benefits from expert guidance and exceptional workmanship.",
+    "steps": [
+      {
+        "label": "Superior coverage",
+        "image": "/Outdoor-look-1.png",
+        "alt": "White and charcoal exterior"
+      },
+      {
+        "label": "Long-lasting",
+        "image": "/Outdoor-look-2.png",
+        "alt": "Blue textured exterior"
+      },
+      {
+        "label": "Rich colour",
+        "image": "/Outdoor-look-4.png",
+        "alt": "White and brown exterior"
+      }
+    ],
+    "bannerTitle": "Express your world in colours.",
+    "bannerBody": "We create lasting impressions. Premium quality products, superior coverage, long-lasting performance, and rich, vibrant colours.",
+    "bannerCta": "Choose your shade",
+    "vision": "To become one of Africa's most trusted and innovative paint manufacturing brands, recognized for delivering premium coating solutions that transform spaces, protect investments and inspire confidence through quality, durability and exceptional services.",
+    "mission": "To manufacture and supply premium quality paints and coating solutions using innovative processes and quality raw materials, while delivering outstanding customer service, professional painting solutions and long-term value to every client.",
+    "value": "Quality. We are committed to producing products that meet high standards of performance, consistency, and durability.",
+    "letter": "At Goldprime Paints, we believe colour is more than decoration. It is a reflection of quality, identity and excellence. Every product we manufacture represents our commitment to delivering premium coating solutions that combine beauty, durability and value.\n\nAs a proudly Nigerian company, we are passionate about transforming residential, commercial and institutional spaces through innovative paint products and professional painting services. Our success is built on integrity, consistency and an unwavering dedication to customer satisfaction.\n\nWe value every opportunity to partner with homeowners, contractors, architects, developers and organizations. We remain committed to delivering solutions that exceed expectations.\n\nThank you for choosing Goldprime Paints. We look forward to adding colour and lasting value to your next project.",
+    "letterName": "Damilola Adeleye",
+    "letterRole": "Managing Director / Chief Executive Officer"
+  },
+  "custom": {
+    "eyebrow": "CUSTOM",
+    "title": "Request a custom colour",
+    "body": "Type the colour you want below. We will open WhatsApp to your customer care line with that colour ready to send.",
+    "colourLabel": "Colour you want",
+    "colourPlaceholder": "e.g. Soft sage green, warm cream, or a colour code",
+    "colourHint": "Describe the shade in your own words, or paste a colour code if you have one.",
+    "whatsappMessage": "Hello Goldprime — I'd like a custom paint colour.",
+    "whatsappButton": "Send on WhatsApp",
+    "shopButton": "Browse finishes",
+    "images": [
+      {
+        "src": "/Outdoor-look-1.png",
+        "alt": "White and charcoal exterior"
+      },
+      {
+        "src": "/Outdoor-look-2.png",
+        "alt": "Blue textured exterior"
+      },
+      {
+        "src": "/Outdoor-look-3.png",
+        "alt": "Peach and white exterior"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CUSTOMER CARE",
+    "title": "Talk to Goldprime",
+    "body": "Call either customer-care line, or message us on WhatsApp. Email works too.",
+    "whatsappMessage": "Hello Goldprime!",
+    "whatsappButton": "Open WhatsApp"
+  },
+  "footer": {
+    "exploreLabel": "EXPLORE",
+    "followLabel": "FOLLOW",
+    "whatsappMessage": "Hello Goldprime!",
+    "blurb": "Highly washable. Ideal smoothness. Maximum coverage. Durable.",
+    "copyright": "© 2026 GOLDPRIME GLOBAL NIG. LTD."
+  },
+  "checkout": {
+    "eyebrow": "ALMOST THERE",
+    "title": "Review your order",
+    "note": "We'll confirm your order on WhatsApp.",
+    "continueButton": "Continue on WhatsApp",
+    "editLink": "Edit order",
+    "colourLabel": "Colour",
+    "tinLabel": "Tin",
+    "quantityLabel": "Quantity",
+    "totalLabel": "Total"
+  },
+  "orderSent": {
+    "eyebrow": "ORDER SENT",
+    "title": "Thank you — we've opened WhatsApp so you can confirm with Goldprime.",
+    "body": "Customer care will reply to confirm the colour, the tin size, and delivery.",
+    "whatsappButton": "Chat with Goldprime",
+    "whatsappMessage": "Hello — I just sent an order from the website.",
+    "shopButton": "Back to shop",
+    "footnote": "GOLDPRIME GLOBAL NIG. · NIGERIA"
+  },
+  "order": {
+    "greeting": "Hello Goldprime Paints 👋",
+    "intro": "I'd like to order:",
+    "closing": "Please confirm availability. Thank you!"
+  },
+  "productUi": {
+    "colourLabel": "COLOUR",
+    "tinLabel": "TIN SIZE",
+    "coverageLabel": "Coverage guide",
+    "missingColour": "Need a different colour?",
+    "qtyLabel": "QTY",
+    "orderButton": "Order now",
+    "addToCartButton": "Add to cart"
+  },
+  "colours": [
+    {
+      "id": "light-grey",
+      "name": "Light Grey",
+      "hex": "#cdcecf",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "silver-grey",
+      "name": "Silver Grey",
+      "hex": "#b1b5b8",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "ash-grey",
+      "name": "Ash Grey",
+      "hex": "#a6aaac",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "pearl-grey",
+      "name": "Pearl Grey",
+      "hex": "#929699",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "smoke-grey",
+      "name": "Smoke Grey",
+      "hex": "#868b8e",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "dove-grey",
+      "name": "Dove Grey",
+      "hex": "#919598",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "cloud-grey",
+      "name": "Cloud Grey",
+      "hex": "#afb5b9",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "steel-grey",
+      "name": "Steel Grey",
+      "hex": "#8b949b",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "slate-grey",
+      "name": "Slate Grey",
+      "hex": "#838a8f",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "graphite-grey",
+      "name": "Graphite Grey",
+      "hex": "#63686b",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "charcoal-grey",
+      "name": "Charcoal Grey",
+      "hex": "#484d50",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "elephant-grey",
+      "name": "Elephant Grey",
+      "hex": "#4f5457",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "mist-grey",
+      "name": "Mist Grey",
+      "hex": "#b6bbbe",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "fog-grey",
+      "name": "Fog Grey",
+      "hex": "#a4aab0",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "stone-grey",
+      "name": "Stone Grey",
+      "hex": "#868c92",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "shadow-grey",
+      "name": "Shadow Grey",
+      "hex": "#5c6266",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "iron-grey",
+      "name": "Iron Grey",
+      "hex": "#4b5154",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "onyx-grey",
+      "name": "Onyx Grey",
+      "hex": "#383d40",
+      "family": "Shades of Grey"
+    },
+    {
+      "id": "ivory-brown",
+      "name": "Ivory Brown",
+      "hex": "#e9d4b3",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "sand-brown",
+      "name": "Sand Brown",
+      "hex": "#d4b689",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "beige-brown",
+      "name": "Beige Brown",
+      "hex": "#d1ac7d",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "caramel",
+      "name": "Caramel",
+      "hex": "#c99759",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "taupe",
+      "name": "Taupe",
+      "hex": "#a58973",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "light-brown",
+      "name": "Light Brown",
+      "hex": "#a77341",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "honey-brown",
+      "name": "Honey Brown",
+      "hex": "#ba8a52",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "almond-brown",
+      "name": "Almond Brown",
+      "hex": "#af804c",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "hazelnut",
+      "name": "Hazelnut",
+      "hex": "#985c28",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "chestnut",
+      "name": "Chestnut",
+      "hex": "#8c5224",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "cocoa-brown",
+      "name": "Cocoa Brown",
+      "hex": "#704324",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "mocha",
+      "name": "Mocha",
+      "hex": "#764a2c",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "terracotta",
+      "name": "Terracotta",
+      "hex": "#b9662e",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "maple-brown",
+      "name": "Maple Brown",
+      "hex": "#9e5f29",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "walnut-brown",
+      "name": "Walnut Brown",
+      "hex": "#723f1e",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "chocolate",
+      "name": "Chocolate",
+      "hex": "#4a291a",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "dark-brown",
+      "name": "Dark Brown",
+      "hex": "#412619",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "hex": "#3b2317",
+      "family": "Shades of Brown"
+    },
+    {
+      "id": "pure-white",
+      "name": "Pure White",
+      "hex": "#fcfbf6",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "snow-white",
+      "name": "Snow White",
+      "hex": "#faf9f4",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "pearl-white",
+      "name": "Pearl White",
+      "hex": "#f0ebde",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "ivory",
+      "name": "Ivory",
+      "hex": "#f0e7d5",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "cream",
+      "name": "Cream",
+      "hex": "#ece2c8",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "bone",
+      "name": "Bone",
+      "hex": "#ece1c9",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "shell-white",
+      "name": "Shell White",
+      "hex": "#f0eee1",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "eggshell",
+      "name": "Eggshell",
+      "hex": "#edecde",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "lily-white",
+      "name": "Lily White",
+      "hex": "#efeee1",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "cotton",
+      "name": "Cotton",
+      "hex": "#f1ebdd",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "linen",
+      "name": "Linen",
+      "hex": "#edeadb",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "oyster-white",
+      "name": "Oyster White",
+      "hex": "#e9e6d9",
+      "family": "Whites & Off Whites"
+    },
+    {
+      "id": "baby-blue",
+      "name": "Baby Blue",
+      "hex": "#a5d4f5",
+      "family": "Blues"
+    },
+    {
+      "id": "sky-blue",
+      "name": "Sky Blue",
+      "hex": "#93c3e7",
+      "family": "Blues"
+    },
+    {
+      "id": "powder-blue",
+      "name": "Powder Blue",
+      "hex": "#8bbde3",
+      "family": "Blues"
+    },
+    {
+      "id": "ocean-blue",
+      "name": "Ocean Blue",
+      "hex": "#6193c2",
+      "family": "Blues"
+    },
+    {
+      "id": "sapphire",
+      "name": "Sapphire",
+      "hex": "#3467a0",
+      "family": "Blues"
+    },
+    {
+      "id": "royal-blue",
+      "name": "Royal Blue",
+      "hex": "#0f458d",
+      "family": "Blues"
+    },
+    {
+      "id": "slate-blue",
+      "name": "Slate Blue",
+      "hex": "#658ba8",
+      "family": "Blues"
+    },
+    {
+      "id": "denim-blue",
+      "name": "Denim Blue",
+      "hex": "#436381",
+      "family": "Blues"
+    },
+    {
+      "id": "navy-blue",
+      "name": "Navy Blue",
+      "hex": "#15375b",
+      "family": "Blues"
+    },
+    {
+      "id": "cobalt-blue",
+      "name": "Cobalt Blue",
+      "hex": "#022b5c",
+      "family": "Blues"
+    },
+    {
+      "id": "teal-blue",
+      "name": "Teal Blue",
+      "hex": "#024c6d",
+      "family": "Blues"
+    },
+    {
+      "id": "midnight-blue",
+      "name": "Midnight Blue",
+      "hex": "#022043",
+      "family": "Blues"
+    },
+    {
+      "id": "mint-green",
+      "name": "Mint Green",
+      "hex": "#9fe3bf",
+      "family": "Greens"
+    },
+    {
+      "id": "seafoam",
+      "name": "Seafoam",
+      "hex": "#8dd1ac",
+      "family": "Greens"
+    },
+    {
+      "id": "sage-green",
+      "name": "Sage Green",
+      "hex": "#89bf93",
+      "family": "Greens"
+    },
+    {
+      "id": "pastel-green",
+      "name": "Pastel Green",
+      "hex": "#9dbf8b",
+      "family": "Greens"
+    },
+    {
+      "id": "olive-green",
+      "name": "Olive Green",
+      "hex": "#748853",
+      "family": "Greens"
+    },
+    {
+      "id": "moss-green",
+      "name": "Moss Green",
+      "hex": "#6a7f48",
+      "family": "Greens"
+    },
+    {
+      "id": "emerald-green",
+      "name": "Emerald Green",
+      "hex": "#027054",
+      "family": "Greens"
+    },
+    {
+      "id": "forest-green",
+      "name": "Forest Green",
+      "hex": "#01543b",
+      "family": "Greens"
+    },
+    {
+      "id": "hunter-green",
+      "name": "Hunter Green",
+      "hex": "#014c36",
+      "family": "Greens"
+    },
+    {
+      "id": "pine-green",
+      "name": "Pine Green",
+      "hex": "#014c35",
+      "family": "Greens"
+    },
+    {
+      "id": "bottle-green",
+      "name": "Bottle Green",
+      "hex": "#02432c",
+      "family": "Greens"
+    },
+    {
+      "id": "dark-green",
+      "name": "Dark Green",
+      "hex": "#024028",
+      "family": "Greens"
+    },
+    {
+      "id": "light-beige",
+      "name": "Light Beige",
+      "hex": "#e0d0b9",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "warm-beige",
+      "name": "Warm Beige",
+      "hex": "#dbc8a8",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "natural-beige",
+      "name": "Natural Beige",
+      "hex": "#d5be9d",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "sand-beige",
+      "name": "Sand Beige",
+      "hex": "#cbb695",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "greige",
+      "name": "Greige",
+      "hex": "#b8ab96",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "stone",
+      "name": "Stone",
+      "hex": "#b7ab96",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "latte",
+      "name": "Latte",
+      "hex": "#d2b999",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "cappuccino",
+      "name": "Cappuccino",
+      "hex": "#cbaa81",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "tan",
+      "name": "Tan",
+      "hex": "#cba87a",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "fawn",
+      "name": "Fawn",
+      "hex": "#bfa280",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "mushroom",
+      "name": "Mushroom",
+      "hex": "#b29b82",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "dusty-beige",
+      "name": "Dusty Beige",
+      "hex": "#bfac94",
+      "family": "Beiges & Neutrals"
+    },
+    {
+      "id": "pastel-yellow",
+      "name": "Pastel Yellow",
+      "hex": "#fde666",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "lemon-yellow",
+      "name": "Lemon Yellow",
+      "hex": "#fbdf51",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "golden-yellow",
+      "name": "Golden Yellow",
+      "hex": "#f9ca2b",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "mustard",
+      "name": "Mustard",
+      "hex": "#f3b31f",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "apricot",
+      "name": "Apricot",
+      "hex": "#fcb54f",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "peach",
+      "name": "Peach",
+      "hex": "#fdb468",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "amber",
+      "name": "Amber",
+      "hex": "#fdac18",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "tangerine",
+      "name": "Tangerine",
+      "hex": "#fd7b15",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "burnt-orange",
+      "name": "Burnt Orange",
+      "hex": "#f96511",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "rust",
+      "name": "Rust",
+      "hex": "#e2460d",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "pumpkin",
+      "name": "Pumpkin",
+      "hex": "#e2420c",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "terracotta-orange",
+      "name": "Terracotta",
+      "hex": "#c43112",
+      "family": "Yellows & Oranges"
+    },
+    {
+      "id": "soft-pink",
+      "name": "Soft Pink",
+      "hex": "#fdcfd2",
+      "family": "Reds & Pinks"
+    },
+    {
+      "id": "blush-pink",
+      "name": "Blush Pink",
+      "hex": "#f9bfbf",
+      "family": "Reds & Pinks"
+    },
+    {
+      "id": "rose-pink",
+      "name": "Rose Pink",
+      "hex": "#e9adac",
+      "family": "Reds & Pinks"
+    },
+    {
+      "id": "mauve",
+      "name": "Mauve",
+      "hex": "#d79392",
+      "family": "Reds & Pinks"
+    },
+    {
+      "id": "dusty-rose",
+      "name": "Dusty Rose",
+      "hex": "#cf7474",
+      "family": "Reds & Pinks"
+    },
+    {
+      "id": "coral",
+      "name": "Coral",
+      "hex": "#ec5845",
+      "family": "Reds & Pinks"
+    },
+    {
+      "id": "poppy-red",
+      "name": "Poppy Red",
+      "hex": "#d30717",
+      "family": "Reds & Pinks"
+    },
+    {
+      "id": "cherry-red",
+      "name": "Cherry Red",
+      "hex": "#c50113",
+      "family": "Reds & Pinks"
+    },
+    {
+      "id": "brick-red",
+      "name": "Brick Red",
+      "hex": "#991219",
+      "family": "Reds & Pinks"
+    },
+    {
+      "id": "wine-red",
+      "name": "Wine Red",
+      "hex": "#82111e",
+      "family": "Reds & Pinks"
+    },
+    {
+      "id": "berry",
+      "name": "Berry",
+      "hex": "#711529",
+      "family": "Reds & Pinks"
+    },
+    {
+      "id": "burgundy",
+      "name": "Burgundy",
+      "hex": "#6f111f",
+      "family": "Reds & Pinks"
+    }
+  ],
+  "tinSizes": [
+    {
+      "size": "4L",
+      "factor": 0.28
+    },
+    {
+      "size": "10L",
+      "factor": 0.55
+    },
+    {
+      "size": "20L",
+      "factor": 1
+    }
+  ],
+  "products": [
+    {
+      "id": "acrylic-emulsion",
+      "slug": "acrylic-emulsion",
+      "name": "Acrylic Emulsion",
+      "price": 15000,
+      "range": "indoor",
+      "places": [
+        "indoor",
+        "outdoor"
+      ],
+      "category": "Emulsion",
+      "badge": "Standard quality",
+      "shortDesc": "Acrylic Emulsion, a standard-quality paint for interior and exterior.",
+      "description": "Acrylic Emulsion is a standard-quality decorative coating for walls, ceilings, plaster, and concrete. It gives rich, vibrant colour, excellent coverage, and a washable finish indoors and outdoors.",
+      "image": "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794303190271-c0cce29a.jpg",
+      "images": [
+        "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794303190271-c0cce29a.jpg"
+      ],
+      "colours": [
+        {
+          "id": "pure-white",
+          "name": "Pure White",
+          "hex": "#fcfbf6",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "ivory",
+          "name": "Ivory",
+          "hex": "#f0e7d5",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "baby-blue",
+          "name": "Baby Blue",
+          "hex": "#a5d4f5",
+          "family": "Blues"
+        },
+        {
+          "id": "mint-green",
+          "name": "Mint Green",
+          "hex": "#9fe3bf",
+          "family": "Greens"
+        },
+        {
+          "id": "pastel-yellow",
+          "name": "Pastel Yellow",
+          "hex": "#fde666",
+          "family": "Yellows & Oranges"
+        },
+        {
+          "id": "soft-pink",
+          "name": "Soft Pink",
+          "hex": "#fdcfd2",
+          "family": "Reds & Pinks"
+        },
+        {
+          "id": "light-grey",
+          "name": "Light Grey",
+          "hex": "#cdcecf",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "sand-beige",
+          "name": "Sand Beige",
+          "hex": "#cbb695",
+          "family": "Beiges & Neutrals"
+        }
+      ],
+      "features": [
+        "Standard quality",
+        "Interior and exterior",
+        "Rich and vibrant colours",
+        "Excellent coverage",
+        "Washable and easy to clean",
+        "Durable and long lasting",
+        "Suitable for walls, ceilings, plaster, and concrete"
+      ]
+    },
+    {
+      "id": "satin",
+      "slug": "goldprime-super-satin",
+      "name": "Goldprime super satin ",
+      "price": 70000,
+      "range": "indoor",
+      "places": [
+        "indoor",
+        "outdoor"
+      ],
+      "category": "Goldprime super satin ",
+      "badge": "Luxury finish",
+      "shortDesc": "Goldprime super satin, a luxury finish for interior and exterior.",
+      "description": "Goldprime super satin  is a premium luxury finish with a smooth satin sheen. It gives rich, vibrant colour, excellent coverage, and long-lasting protection indoors and outdoors.",
+      "image": "/Gold%20prime%20Paints-2.png",
+      "images": [
+        "/Gold%20prime%20Paints-2.png",
+        "/Satin%20finish.jpeg",
+        "/Satin%20finish%20-2.jpeg",
+        "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794303584725-f73ffda9.jpg"
+      ],
+      "colours": [
+        {
+          "id": "navy-blue",
+          "name": "Navy Blue",
+          "hex": "#15375b",
+          "family": "Blues"
+        },
+        {
+          "id": "golden-yellow",
+          "name": "Golden Yellow",
+          "hex": "#f9ca2b",
+          "family": "Yellows & Oranges"
+        },
+        {
+          "id": "pure-white",
+          "name": "Pure White",
+          "hex": "#fcfbf6",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "ivory",
+          "name": "Ivory",
+          "hex": "#f0e7d5",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "cream",
+          "name": "Cream",
+          "hex": "#ece2c8",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "pearl-white",
+          "name": "Pearl White",
+          "hex": "#f0ebde",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "shell-white",
+          "name": "Shell White",
+          "hex": "#f0eee1",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "cotton",
+          "name": "Cotton",
+          "hex": "#f1ebdd",
+          "family": "Whites & Off Whites"
+        }
+      ],
+      "features": [
+        "Interior and exterior luxury finish",
+        "Rich and vibrant colours",
+        "Smooth satin finish",
+        "Durable and washable",
+        "Premium quality",
+        "Excellent coverage and long-lasting protection"
+      ]
+    },
+    {
+      "id": "gravitex",
+      "slug": "gravitex",
+      "name": "Gravitex",
+      "price": 30000,
+      "range": "outdoor",
+      "places": [
+        "outdoor"
+      ],
+      "category": "Texture",
+      "badge": "Luxury finish",
+      "shortDesc": "Gravitex, a textured luxury finish for exterior.",
+      "description": "Gravitex is a premium textured finish for exterior walls. It is durable, weather resistant, and gives a fine texture that hides imperfections.",
+      "image": "/Gold%20prime%20Paints-4.png",
+      "images": [
+        "/Gold%20prime%20Paints-4.png",
+        "/Gravitex%20paint.jpeg",
+        "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794303780744-88d9b6e1.jpg"
+      ],
+      "colours": [
+        {
+          "id": "sage-green",
+          "name": "Sage Green",
+          "hex": "#89bf93",
+          "family": "Greens"
+        },
+        {
+          "id": "stone-grey",
+          "name": "Stone Grey",
+          "hex": "#868c92",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "ivory",
+          "name": "Ivory",
+          "hex": "#f0e7d5",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "pure-white",
+          "name": "Pure White",
+          "hex": "#fcfbf6",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "charcoal-grey",
+          "name": "Charcoal Grey",
+          "hex": "#484d50",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "ash-grey",
+          "name": "Ash Grey",
+          "hex": "#a6aaac",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "cream",
+          "name": "Cream",
+          "hex": "#ece2c8",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "cloud-grey",
+          "name": "Cloud Grey",
+          "hex": "#afb5b9",
+          "family": "Shades of Grey"
+        }
+      ],
+      "features": [
+        "Exterior luxury finish",
+        "Rich and vibrant colours",
+        "Durable and weather resistant",
+        "Excellent texture finish",
+        "Hides wall imperfections",
+        "Premium quality"
+      ],
+      "outdoorImages": [
+        "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794304574416-41687cff.jpg",
+        "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794304575566-3a7f7676.jpg",
+        "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794304576451-ae3ce38b.jpg"
+      ],
+      "outdoorImage": "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794304574416-41687cff.jpg"
+    },
+    {
+      "id": "trowel",
+      "slug": "trowel",
+      "name": "Trowel",
+      "price": 40000,
+      "range": "indoor",
+      "places": [
+        "indoor",
+        "outdoor"
+      ],
+      "category": "Texture",
+      "badge": "Trowel finish",
+      "shortDesc": "Trowel, a textured interior finish for walls and ceilings.",
+      "description": "Trowel is a premium trowel finish. On interior walls it gives a fine, speckled texture in grey, with a strong coating that is durable and weather resistant.",
+      "image": "/Gold%20prime%20trowel%20finish-1.jpeg",
+      "images": [
+        "/Gold%20prime%20trowel%20finish-1.jpeg",
+        "/Gold%20prime%20trowel%20finish%20-%202.jpeg",
+        "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794303860764-11395438.jpg"
+      ],
+      "outdoorImage": "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794303878509-57cfd594.jpg",
+      "outdoorImages": [
+        "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794303878509-57cfd594.jpg"
+      ],
+      "colours": [
+        {
+          "id": "light-grey",
+          "name": "Light Grey",
+          "hex": "#cdcecf",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "silver-grey",
+          "name": "Silver Grey",
+          "hex": "#b1b5b8",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "ash-grey",
+          "name": "Ash Grey",
+          "hex": "#a6aaac",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "stone-grey",
+          "name": "Stone Grey",
+          "hex": "#868c92",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "mist-grey",
+          "name": "Mist Grey",
+          "hex": "#b6bbbe",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "graphite-grey",
+          "name": "Graphite Grey",
+          "hex": "#63686b",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "charcoal-grey",
+          "name": "Charcoal Grey",
+          "hex": "#484d50",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "pure-white",
+          "name": "Pure White",
+          "hex": "#fcfbf6",
+          "family": "Whites & Off Whites"
+        }
+      ],
+      "features": [
+        "Exclusive trowel finish",
+        "Interior and exterior",
+        "Strong and durable",
+        "Weather resistant",
+        "Premium quality",
+        "Long-lasting beauty"
+      ]
+    },
+    {
+      "id": "gold-prime-super-satin",
+      "slug": "goldprime-screeding-putty",
+      "name": "Goldprime Screeding Putty ",
+      "price": 35000,
+      "range": "indoor",
+      "places": [
+        "indoor",
+        "outdoor"
+      ],
+      "category": "Wall Preparation & Surface Finishing Products.",
+      "badge": "Premium Quality • Smooth Finish • Excellent Adhesion",
+      "shortDesc": "GoldPrime Screeding Putty – Creates a smooth, flawless wall surface, delivering the perfect foundation for a beautiful, premium paint finish.",
+      "description": "GoldPrime Screeding Putty is a high-quality wall preparation product designed to smooth uneven surfaces, cover minor imperfections and create a refined, uniform finish. It provides an excellent foundation for painting, helping achieve beautifully smooth walls and a professional final appearance.\n\nGoldPrime Paints \nVibrant colours, lasting impression.",
+      "image": "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794304445224-ec33568b.jpg",
+      "images": [
+        "https://xq9fobc7vnjjusv7.public.blob.vercel-storage.com/goldprime/uploads/1794304445224-ec33568b.jpg"
+      ],
+      "colours": [
+        {
+          "id": "berry",
+          "name": "Berry",
+          "hex": "#711529",
+          "family": "Reds & Pinks"
+        },
+        {
+          "id": "wine-red",
+          "name": "Wine Red",
+          "hex": "#82111e",
+          "family": "Reds & Pinks"
+        },
+        {
+          "id": "burgundy",
+          "name": "Burgundy",
+          "hex": "#6f111f",
+          "family": "Reds & Pinks"
+        },
+        {
+          "id": "mauve",
+          "name": "Mauve",
+          "hex": "#d79392",
+          "family": "Reds & Pinks"
+        },
+        {
+          "id": "dusty-rose",
+          "name": "Dusty Rose",
+          "hex": "#cf7474",
+          "family": "Reds & Pinks"
+        },
+        {
+          "id": "pure-white",
+          "name": "Pure White",
+          "hex": "#fcfbf6",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "ivory",
+          "name": "Ivory",
+          "hex": "#f0e7d5",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "charcoal-grey",
+          "name": "Charcoal Grey",
+          "hex": "#484d50",
+          "family": "Shades of Grey"
+        }
+      ],
+      "features": [
+        "Smooth Wall Finish",
+        "Excellent Surface Levelling",
+        "Covers Minor Imperfections * Easy Application * Strong Surface Adhesion * Fine Texture * Paint-Ready Finish * Interior Wall Preparation * Professional Finish Durable Performance"
+      ]
+    },
+    {
+      "id": "gold-prime-super-matt-paint",
+      "slug": "gold-prime-super-matt-paint",
+      "name": "Gold Prime Super Matt Paint",
+      "price": 45000,
+      "range": "indoor",
+      "places": [
+        "indoor",
+        "outdoor"
+      ],
+      "category": "Matt",
+      "badge": "Interior-Exterior",
+      "shortDesc": "Gold Prime Super Matt Paint for interior and exterior walls.",
+      "description": "Gold Prime Super Matt Paint is the interior and exterior matt finish. A smooth, elegant matt with excellent coverage for outside walls, homes, and apartments. Wide spreading capacity, and suitable for every colour in the chart.",
+      "image": "/Outdoor-look-1.png",
+      "images": [
+        "/Outdoor-look-1.png",
+        "/Outdoor-look-2.png",
+        "/Outdoor-look-3.png",
+        "/Outdoor-look-4.png"
+      ],
+      "outdoorImage": "/Outdoor-look-1.png",
+      "outdoorImages": [
+        "/Outdoor-look-1.png",
+        "/Outdoor-look-2.png",
+        "/Outdoor-look-3.png",
+        "/Outdoor-look-4.png"
+      ],
+      "colours": [
+        {
+          "id": "cream",
+          "name": "Cream",
+          "hex": "#ece2c8",
+          "family": "Whites & Off Whites"
+        },
+        {
+          "id": "greige",
+          "name": "Greige",
+          "hex": "#b8ab96",
+          "family": "Beiges & Neutrals"
+        },
+        {
+          "id": "sage-green",
+          "name": "Sage Green",
+          "hex": "#89bf93",
+          "family": "Greens"
+        },
+        {
+          "id": "powder-blue",
+          "name": "Powder Blue",
+          "hex": "#8bbde3",
+          "family": "Blues"
+        },
+        {
+          "id": "warm-beige",
+          "name": "Warm Beige",
+          "hex": "#dbc8a8",
+          "family": "Beiges & Neutrals"
+        },
+        {
+          "id": "dove-grey",
+          "name": "Dove Grey",
+          "hex": "#919598",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "blush-pink",
+          "name": "Blush Pink",
+          "hex": "#f9bfbf",
+          "family": "Reds & Pinks"
+        },
+        {
+          "id": "ivory",
+          "name": "Ivory",
+          "hex": "#f0e7d5",
+          "family": "Whites & Off Whites"
+        }
+      ],
+      "features": [
+        "Smooth and elegant matt finish",
+        "Excellent coverage and a modern finish",
+        "Exterior and interior matt paint",
+        "Ideal for homes and apartments",
+        "Wide spreading capacity",
+        "Suitable for all colours"
+      ]
+    },
+    {
+      "id": "p-1794303466276",
+      "slug": "new-paint",
+      "name": "New paint",
+      "price": 10000,
+      "range": "indoor",
+      "category": "Emulsion",
+      "shortDesc": "",
+      "description": "",
+      "image": "",
+      "images": [],
+      "colours": [
+        {
+          "id": "light-grey",
+          "name": "Light Grey",
+          "hex": "#cdcecf",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "silver-grey",
+          "name": "Silver Grey",
+          "hex": "#b1b5b8",
+          "family": "Shades of Grey"
+        },
+        {
+          "id": "ash-grey",
+          "name": "Ash Grey",
+          "hex": "#a6aaac",
+          "family": "Shades of Grey"
+        }
+      ],
+      "features": [],
+      "badge": "",
+      "places": [
+        "indoor"
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "I recently renovated my living room and used Goldprime Paints. The coverage and finish were outstanding, and the colours look even better than I imagined. The customer support team was also incredibly helpful in guiding me through the selection process.",
+      "name": "Ayodele",
+      "city": "Homeowner"
+    },
+    {
+      "quote": "I decided to repaint my office and went with Goldprime Paints. The application was smooth, and the final look is professional and clean. The durability of the paint is also impressive. It has made a significant difference in the ambiance of my workspace.",
+      "name": "Chinelo",
+      "city": "Office Manager"
+    },
+    {
+      "quote": "As an interior designer, I always look for quality products for my clients. Goldprime Paints has been a game-changer for me. The wide range of colours and finishes available helps me bring my creative visions to life. My clients are always impressed with the results. Thank you, Goldprime Paints!",
+      "name": "Nia",
+      "city": "Interior Designer"
+    }
+  ]
+}
