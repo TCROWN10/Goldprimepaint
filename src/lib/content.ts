@@ -1,5 +1,3 @@
-import { promises as fs } from "fs";
-import path from "path";
 import { unstable_noStore as noStore } from "next/cache";
 import {
   COLOURS,
@@ -7,6 +5,7 @@ import {
   testimonials as defaultTestimonials,
 } from "@/lib/catalogue";
 import type { PaintColour, Product, TinSize } from "@/lib/data";
+import { readContentJson, writeContentJson } from "@/lib/site-storage";
 
 export type StoryImage = { src: string; alt: string };
 export type AboutStep = { label: string; image: string; alt: string };
@@ -167,8 +166,6 @@ export type SiteContent = {
   products: Product[];
   testimonials: { quote: string; name: string; city: string }[];
 };
-
-const FILE = path.join(process.cwd(), "data", "site-content.json");
 
 export function defaultSiteContent(): SiteContent {
   return {
@@ -518,7 +515,8 @@ export function normalizeContent(saved: Partial<SiteContent> | null | undefined)
 export async function getSiteContent(): Promise<SiteContent> {
   noStore();
   try {
-    const raw = await fs.readFile(FILE, "utf8");
+    const raw = await readContentJson();
+    if (!raw) return defaultSiteContent();
     return normalizeContent(JSON.parse(raw) as Partial<SiteContent>);
   } catch {
     return defaultSiteContent();
@@ -537,7 +535,6 @@ export async function saveSiteContent(input: Partial<SiteContent>) {
   if (content.products.some((product) => !product.name.trim())) {
     throw new Error("Every product needs a name.");
   }
-  await fs.mkdir(path.dirname(FILE), { recursive: true });
-  await fs.writeFile(FILE, JSON.stringify(content, null, 2));
+  await writeContentJson(JSON.stringify(content, null, 2));
   return content;
 }
